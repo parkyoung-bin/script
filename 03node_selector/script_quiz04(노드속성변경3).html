@@ -42,10 +42,17 @@
     <script>
         var dark = document.querySelector(".dark");
         var light = document.querySelector(".light");
-    
+        // var body = document.querySelector("body");
+        // var all  = document.querySelectorAll("h2,p,a");  >> 배열로 받음
+
         dark.onclick = function(){
             document.body.style = "background : black"
             document.body.style.color = "white"
+            //body.style.backgroundColor="black"; 
+            
+            /* for(var i=0;i<all.length;i++){ //배열이기 때문에 반복문으로 돌려서 적용 
+                all[i].style.color="white";
+            } */
         }
 
         light.onclick = function(){

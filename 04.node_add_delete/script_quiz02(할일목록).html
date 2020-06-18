@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     
+    </style>
+</head>
+<body>
+    <h3>할일 삭제 기능은 아직 구현하지 마세요</h3>
+    <h3>할일 목록 만들기</h3>
+    
+    
+    <a></a>
+    <form class ="ids">
+    <input type ="text" id="id" placeholder="닉네임">
+    <button type="button" id="btn1">확인</button>
+    </form>
+
+    <br>
+    <form class = "content">
+    <input type ="text" id="text" placeholder="할일 적으세요">
+    <button type="button" id="btn2">확인</button>
+    </form>
+    
+    <ul class = "list">
+
+    </ul>
+    
+    <script>
+    var btn1 = document.getElementById("btn1");
+    var btn2 = document.getElementById("btn2");
+    var id = document.getElementById("id");
+
+    var text = document.getElementById("text");
+    var ul = document.querySelector(".list");
+    var ids = document.querySelector(".ids");
+    var a = document.querySelector("a")
+    
+    btn1.onclick=function(){
+        ids.style.display="none";
+        
+        a.innerHTML=(id.value+"님 안녕하세요"+"<br>");
+
+    }
+
+    
+    btn2.onclick=function(){
+        var li = document.createElement("li");
+        li.innerHTML = text.value +"<button type = 'button'>x</button><button type = 'button' class ='up'>↑</button><button type = 'button' class='down'>↓</button>";
+        text.value=" ";
+        ul.appendChild(li);
+        
+        
+        
+
+    }
+    
+        
+    </script>
+</body>
+</html>
