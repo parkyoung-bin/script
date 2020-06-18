@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {text-align: center;}
+    .box{overflow: hidden; border:1px solid #333;margin-left: 30%;margin-right: 30%;box-sizing: border-box;padding:5px}
+    .box .left{float :left; padding : 5px; width:50%;box-sizing: border-box;}
+    .box .right{float :left; padding : 5px;width:50%;box-sizing: border-box;}
+    .box .left-inner{border:1px solid #333;box-sizing: border-box; }
+    .box .right-inner{ border:1px solid #333;box-sizing: border-box; height: 367px;}
+    img{
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<body>
+    <!-- 백그라운드 document.body -->
+    <header>
+        <h2>야간모드</h2>
+        <button class="dark">어둡게</button>
+        <button class="light">밝게</button>
+        <hr>
+    </header>
+    <section>
+        <div class= "box">
+         
+            <div class ="left">
+            <div class="left-inner" ><img src ="profile.png"></div>
+            </div>
+
+            <div class="right">
+            <div class="right-inner">자바스크립트(영어: JavaScript)는 객체 기반의 스크립트 프로그래밍 언어이다. 이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 또한 Node.js와 같은 런타임 환경과 같이 서버 사이드 네트워크 프로그래밍에도 사용되고 있다. </div>
+            </div>
+
+        </div>
+
+    </section>
+    <script>
+        var dark = document.querySelector(".dark");
+        var light = document.querySelector(".light");
+    
+        dark.onclick = function(){
+            document.body.style = "background : black"
+            document.body.style.color = "white"
+        }
+
+        light.onclick = function(){
+            document.body.style = "background : white"
+        }
+        
+    </script>
+</body>
+</html>

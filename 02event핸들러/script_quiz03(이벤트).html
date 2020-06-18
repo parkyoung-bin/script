@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>자바스크립트 카운트</h2>
+    <!-- <input type="text" value="0" id="result">
+    <button type="button" onclick="plus()" id ="p">+</button>
+    <button type="button" onclick ="minus()" id="m">-</button> -->
+    <input type="text" value="0" id="result">
+    <button type="button" onclick="calc(this)" id ="p">+</button>
+    <button type="button" onclick ="calc(this)" id="m">-</button>
+
+
+    <script>
+    // var result1 = document.getElementById("result");
+    
+    // var plus = document.getElementById("p");
+    // var minus = document.getElementById("m");
+    
+    // plus.onclick=function(){
+    //      result1.value ++;    
+    // }
+    // minus.onclick=function(){
+    //     if(result1.value<=0){
+    //         alert("음수는 안돼")
+    //     }else{
+    //     result1.value --;
+    // }
+    // }
+    function calc(oper){
+        var result = document.getElementById("result"); //결과창
+        console.log(oper.innerHTML)
+
+        if(oper.innerHTML === "+"){ // 플러스버튼
+            result.value ++;
+        }else{ //마이너스버튼
+            if(result.value <=0){
+                alert("음수는 ㄴㄴ")
+                return;
+
+            }else{
+                result.value --;
+            }
+        }
+    }
+
+
+
+
+
+    </script>
+</body>
+</html>

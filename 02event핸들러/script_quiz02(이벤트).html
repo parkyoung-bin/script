@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        
+            window.onload = function (){ //화면로딩이 끝난 이후에 실행
+
+            var id1 = document.getElementById("ok1");
+            var id2 = document.getElementById("ok2");
+
+            
+            // id1.addEventListener("click",naver); 
+            // id2.addEventListener("click",google)
+            
+        //     function naver(){
+        //     if(confirm("네이버로 이동하시겠습니까?")){
+        //         location.href="https://www.naver.com"
+        //     }else{
+        //         return false;
+        //     }
+        // }
+    
+        //     function google(){   
+        //     if(confirm("구글로 이동하시겠습니까?")){
+        //         location.href="https://www.google.co.kr"
+        //     }else{
+        //         return false;
+        //     }
+        // }
+
+        id1.onclick=function(){
+            if(confirm("이동?")){
+                location.href=""
+            }
+        }
+        id2.onclick=function(){
+            if(confirm("이동?")){
+                location.href=""
+            }
+        }
+    }
+
+
+    </script>
+    <!-- 페이지 이동은 location.href="경로" -->
+    <button type = "button" id="ok1" onclick="naver()">네이버로 이동</button>
+    <button type = "button" id="ok2" onclick="google()">구글로 이동</button>
+
+</body>
+</html>

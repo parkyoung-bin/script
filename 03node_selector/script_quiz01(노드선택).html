@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+        
+        <input type="checkbox" name="seat" value="1">1
+        <input type="checkbox" name="seat" value="2">2
+        <input type="checkbox" name="seat" value="3">3
+        <input type="checkbox" name="seat" value="4">4
+        <input type="checkbox" name="seat" value="5">5
+        <input type="checkbox" name="seat" value="6">6
+        <input type="checkbox" name="seat" value="7">7
+        <input type="checkbox" name="seat" value="8">8
+        <input type="checkbox" name="seat" value="9">9
+        <input type="checkbox" name="seat" value="10">10
+
+        <br>
+        <button type ="button" id="btn">예약</button>
+        
+
+    </form>
+    <!-- 예약버튼 클릭시 좌석이 한개이상 선택안돼있으면 경고창 띄우기.
+    만약 체크된 태그의 value값은 배열로 생성해서 json형식으로 바꾸세요.
+     -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    var btn = document.getElementById("btn");
+    
+    btn.onclick=function(){
+
+    var seat = document.getElementsByName("seat");
+    var arr = new Array();
+   
+    for(var i =0;i<seat.length;i++){
+        
+        if(seat[i].checked){
+        arr.push(seat[i].value);     
+        console.log(arr)
+        }
+        
+      }  
+        if(arr.length <=0){
+        alert("체크해주세요");
+        }
+        
+        var arrs ={"arr":arr}
+
+        var result=JSON.stringify(arrs);
+
+        console.log(result)
+    } 
+
+
+</script>
+    
+</body>
+</html>

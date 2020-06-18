@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"id="a`">
+<head>
+    <meta charset="UTF-8"id="a`">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"id="a`">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1.다음"checkbox버튼을 클릭 "동의했습니다" 경고창 띄우고 value 출력 -->
+    <input type="checkbox" value="1"onclick="check1(this)"id="a">조항1
+    <input type="checkbox" value="2"onclick="check1(this)"id="b">조항2
+    <input type="checkbox" value="3"onclick="check1(this)"id="c">조항3
+    <input type="checkbox" value="4"onclick="check1(this)"id="d">조항4
+    <input type="checkbox" value="5"onclick="check1(this)"id="e">조항5
+
+    <hr>
+    <!-- 2.버튼을 클릭했을때 input태그의 공백 여버,기억하기의 체크여부를 확인 -->
+    ID:<input type="text" id="id"><br>
+
+    기억하기:<input type="checkbox" id="remember">
+
+    <button type="button"id="check2" onclick="idc()">확인</button>
+
+
+    <script>
+        function check1(a){
+            if(a.checked){
+                alert("동의했습니다.")
+                console.log(a.value)
+            }else{
+            alert("해제함")
+            }
+        }
+
+        var id =  document.getElementById("id");
+        var check = document.getElementById("remember");
+        
+        function idc(){
+            if(id.value ==''){
+                alert("아이디입력하세요")
+            }else if(check.checked){
+                alert("아이디저장했습니다.")
+                console.log("아이디 저장 체크됬습니다.")
+            }else{
+                alert("아이디저장 해제 했습니다.")
+                console.log("아이디 저장 해제되었습니다.")
+            }
+        }
+    </script>
+</body>
+</html>
