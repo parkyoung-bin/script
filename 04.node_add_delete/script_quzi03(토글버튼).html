@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {text-align: center;}
+        .box{overflow: hidden; border:1px solid #333;margin-left: 30%;margin-right: 30%;box-sizing: border-box;padding:5px}
+        .box .left{float :left; padding : 5px; width:50%;box-sizing: border-box;}
+        .box .right{float :left; padding : 5px;width:50%;box-sizing: border-box;}
+        .box .left-inner{border:1px solid #333;box-sizing: border-box; }
+        .box .right-inner{ border:1px solid #333;box-sizing: border-box; height: 367px;}
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        textarea {display:none;width:90%}
+        .btn {display: none;}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="center">
+        <h2>야간모드</h2>
+        <button class="dark" id="btn1">어둡게</button>
+
+        <button class="name" id="btn2">이름보기</button>
+
+        <button class="write" id="btn3">메모장</button>
+        <hr>
+    </header>
+    <section>
+        <div class= "box">
+            <div class ="left">
+            
+            <div class="left-inner" >
+                <img src='profile.png'> <textarea></textarea><button type = "button" class = "btn">등록하기</button>
+            
+            </div>
+            </div>
+
+            <div class="right">
+            <div class="right-inner">자바스크립트(영어: JavaScript)는 객체 기반의 스크립트 프로그래밍 언어이다. 이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 또한 Node.js와 같은 런타임 환경과 같이 서버 사이드 네트워크 프로그래밍에도 사용되고 있다. </div>
+            </div>
+
+            
+
+        </div>
+
+    </section>
+    <script>
+        
+        btn1 = document.getElementById("btn1");
+
+        btn1.onclick = function(){
+
+            if(btn1.className == "dark"){
+            document.body.style = "background : black"
+            document.body.style.color = "white"
+            btn1.innerHTML ="밝게";
+            btn1.className="light";
+
+            }else{
+            document.body.style = "background : white";
+            document.body.style.color="black";
+            btn1.innerHTML ="어둡게"
+            btn1.className="dark";
+        }
+            
+
+        }
+            //body.style.backgroundColor="black"; 
+            
+            /* for(var i=0;i<all.length;i++){ //배열이기 때문에 반복문으로 돌려서 적용 
+                all[i].style.color="white";
+            } */
+        var right= document.querySelector(".right-inner")
+        var btn2 = document.getElementById("btn2");
+        btn2.onclick = function(){
+            if(btn2.className == "name"){
+                right.innerHTML = "홍길동"
+                btn2.className = "content"
+                btn2.innerHTML = "내용보기"
+            }else{
+                right.innerHTML = "자바스크립트(영어: JavaScript)는 객체 기반의 스크립트 프로그래밍 언어이다. 이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 또한 Node.js와 같은 런타임 환경과 같이 서버 사이드 네트워크 프로그래밍에도 사용되고 있다.";
+                btn2.className="name"
+                btn2.innerHTML = "이름보기"
+            }
+        }
+        var btn3 =document.getElementById("btn3");
+
+        
+        
+        btn3.onclick = function(){
+        var left= document.querySelector(".left-inner")
+        var textarea = document.querySelector("textarea")
+        var img = document.querySelector("img")
+        var btn = document.querySelector(".btn")
+        
+            if(btn3.className == "write"){
+                textarea.style.display = "inline";
+                img.style.display="none"
+                btn.style.display = "inline";
+                
+                btn3.className = "view"
+                btn3.innerHTML = "사진보기"
+
+            }else{
+                textarea.style.display = "none";
+                
+                img.style.display="inline"
+                btn.style.display = "none";
+                btn3.className="write"
+                btn3.innerHTML ="메모장"
+            }
+        }
+        
+    </script>
+</body>
+</html>

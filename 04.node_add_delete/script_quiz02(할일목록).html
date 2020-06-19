@@ -24,7 +24,7 @@
     <input type ="text" id="text" placeholder="할일 적으세요">
     <button type="button" id="btn2">확인</button>
     </form>
-    
+
     <ul class = "list">
 
     </ul>
@@ -39,6 +39,7 @@
     var ids = document.querySelector(".ids");
     var a = document.querySelector("a")
     
+
     btn1.onclick=function(){
         ids.style.display="none";
         
@@ -49,16 +50,69 @@
     
     btn2.onclick=function(){
         var li = document.createElement("li");
-        li.innerHTML = text.value +"<button type = 'button'>x</button><button type = 'button' class ='up'>↑</button><button type = 'button' class='down'>↓</button>";
-        text.value=" ";
-        ul.appendChild(li);
-        
+        var up = document.createElement("button");
+        var down = document.createElement("button");
+        //삭제버튼생성
+        var del = document.createElement("button");
+        del.innerHTML = "x"
+        del.addEventListener("click",deleteTodo);
+
+        //이동버튼 생성 후에 eventListener 기법으로 todoUp함수, todoDown함수를 연결
+
+        var up = document.createElement("button");
+        up.innerHTML = "↑";
+        up.addEventListener("click",todoUp)
+        var down = document.createElement("button");
+        down.innerHTML = "↓";
+        down.addEventListener("click",todoDown)
         
         
 
-    }
-    
+        //li 생성
+
+        li.innerHTML = text.value;
+        text.value=" ";
+
+        li.appendChild(del);
+        li.appendChild(up);
+        li.appendChild(down);
+        ul.appendChild(li);
         
+    }
+    //삭제 함수
+    function deleteTodo(){
+   
+        var list=document.querySelector(".list");
+        list.removeChild(event.target.parentElement);
+
+    }
+    function todoUp(){
+        
+        var current = event.target.parentElement;
+        var previous = current.previousElementSibling;
+        console.log("----------")
+        console.log(current)
+        console.log(previous)
+        var list=document.querySelector(".list");
+        if(previous===null){
+                alert("이전행이없습니다.")
+                return;
+            }
+        list.insertBefore(previous,current.nextElementSibling);//옮길대상 , 어디로 옮길지
+    }
+    function todoDown(){
+        var current = event.target.parentElement;
+        var next = current.nextElementSibling
+        var list=document.querySelector(".list");
+        if(next===null){
+                alert("다음행이없습니다.")
+                return;
+            }
+        
+        list.insertBefore(current, next.nextElementSibling);
+
+    }
+   
     </script>
 </body>
 </html>

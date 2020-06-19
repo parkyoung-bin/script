@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>값을 변경해서 보내는 방식이 아닌, 동일한 형태의 태그에 대해서 그 즉시 이벤트를 반영하려면?</h2>
+
+    <ul>
+        <li class = "list">1. 홍가동</li>
+        <li class = "list">2. 가나동</li>
+        <li class = "list">3. 나다동</li>
+        <li class = "list">4. 다라동</li>
+        <li class = "list">5. 라마동</li>
+    </ul>
+    선택된 태그의 값
+    <p class="result"></p>
+
+    <script>
+        var list = document.querySelectorAll(".list");
+        var result = document.querySelector(".result");
+        //이벤트가 발생했을 때 실행되는 함수의 arguments 에 event 객체를 자동으로 넣어줍니다.
+        //하지만, li가 10000개 라면 ?? 함수가 10000개 생성된다는 뜻이기 때문에
+        for(var i=0; i<list.length;i++){
+        list[i].onclick=function(){
+            event.target.style.color = "red";
+            result.innerHTML = event.target.innerHTML;
+
+            }
+        }
+    </script>
+</body>
+</html>
