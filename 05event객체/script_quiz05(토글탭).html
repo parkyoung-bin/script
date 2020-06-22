@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li {list-style: none; display: inline-block; border:1px solid#333; padding:15px; cursor: pointer;}
+        .toggle-menu{display: none;}
+        .active{display: block; animation: fadeIn 2s linear ; }
+        @keyframes fadeIn{
+            from{
+                opacity: 1;
+                color:red;            
+            } to {
+                 
+                opacity:0;
+                color:#333;             
+            }
+        }
+
+    </style>
+</head>
+<body>
+     <h3>토글탭</h3>
+     <section>
+         <ul class = "togglelist">
+             <li data-id="#toggle1">메뉴1</li>
+             <li data-id="#toggle2">메뉴2</li>
+             <li data-id="#toggle3">메뉴3</li>
+         </ul>
+         <div class="toggle-menu active" id = "toggle1">
+            토글메뉴1
+         </div>
+         <div class="toggle-menu" id = "toggle2">
+            토글메뉴2
+        </div>
+        <div class="toggle-menu" id = "toggle3">
+            토글메뉴3
+        </div>
+        
+     </section>
+     <script>
+         /* 
+         1. ul에 이벤트 버블링을 이용해서 클릭이벤트를 걸고 클릭되는 타겟의 data-id를 얻습니다.
+         2. toggle-menu의 active 속성을 삭제
+         3. data-id의 값에 알맞는 태그에 active 속성  추가
+         */
+
+         var togglelist = document.querySelector(".togglelist");
+        var togglemenu = document.querySelectorAll(".toggle-menu");
+         togglelist.onclick=function(){
+             
+             if (event.target.tagName !="LI")return;
+           //active속성을 삭제
+            // console.log(togglemenu)
+            for(var i=0; i<togglemenu.length;i++){
+                if(togglemenu[i].classList.contains("active")){ //active포함한다면
+                    togglemenu[i].classList.remove("active");
+
+            }
+           //active속성 추가
+           
+             var dataId = event.target.dataset.id;
+                console.dir(document.querySelector(dataId).classList.add("active"));
+
+        }     
+           
+        }
+         
+     </script>
+</body>
+</html>

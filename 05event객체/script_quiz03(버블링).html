@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{border-collapse: collapse; border-spacing: 0;}
+       thead tr th,
+       tbody tr td {border:1px solid #777;}
+
+       ul,li{list-style:none; display: inline-block;}
+   </style>
+</head>
+
+<body>
+    <h3>버블링 코드로 변경</h3>
+    <div class = "imgList">
+        <ul>
+            <li><img src="img/1.jpg" alt ="1" width="100"></li>
+            <li><img src="img/2.jpg" alt ="1" width="100"></li>
+            <li><img src="img/3.jpg" alt ="1" width="100"></li>
+            <li><img src="img/4.jpg" alt ="1" width="100"></li>
+        </ul>
+    </div> 
+    결과
+    <div class = "result">
+        <img src = "img/1.jpg" alt = "결과" width="300">
+    </div>
+
+    <hr>
+    <h2>버블링코드로 변경</h2>
+    <table>
+        <thead>
+
+            <tr>
+            
+            <th>번호</th>
+            <th>이름</th>
+            <th>내용</th>
+            <th>삭제</th>
+            </tr>
+
+        </thead>
+
+        <tbody class="btnlist">
+
+            <tr>
+            
+            <td>1</td>
+            <td>ㅎㄱㄷ</td>
+            <td>ㅋㅋ</td>
+            <td><button type = "button" class="btn">삭제</button></td>
+            </tr>
+
+            <tr>
+            
+            <td>2</td>
+            <td>ㅋㄷㅈ</td>
+            <td>ㅎㅎ</td>
+            <td><button type = "button" class="btn">삭제</button></td>
+            </tr>
+
+            <tr>
+            
+            <td>3</td>
+            <td>ㄷㅈㄷ</td>
+            <td>ㄴㄴ</td>
+            <td><button type = "button" class="btn">삭제</button></td>
+            </tr>
+
+            <tr>
+            
+            <td>4</td>
+            <td>ㅎㄷㅇ</td>
+            <td>ㅇㅇ</td>
+            <td><button type = "button" class="btn">삭제</button></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <script>    
+    var imgList = document.querySelector(".imgList");
+    var result = document.querySelector(".result img");
+
+    imgList.onclick=function(){
+        
+        if(event.target.tagName !== "IMG") return;
+            result.src=event.target.src;
+    }
+    
+    var btnlist = document.querySelector(".btnlist");
+    
+    btnlist.onclick = function(){
+        console.dir(event.target);
+        if(event.target.tagName !== "BUTTON")return;
+        event.target.parentElement.parentElement.remove(); // 삭제
+        
+
+    }        
+            
+
+
+  
+       
+    </script>   
+</body>
+</html>
