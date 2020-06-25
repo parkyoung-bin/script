@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+ //좌표 성공 함수
+    function ajax(position){
+
+        var latitude = position.coords.latitude; //위도
+        var longitude = position.coords.longitude; //경도
+        fetch("https://8oi9s0nnth.apigw.ntruss.com/corona19-masks/v1/storesByGeo/json?lat=latitude&lng=longitude&m=5000").then(function(response){
+            // 'https://8oi9s0nnth.apigw.ntruss.com/corona19-masks/v1/storesByGeo/json?lat=${latitude}&lng=${longitude}'
+            
+            if(response.status !== 200){
+            alert("서버와의 통신에 실패했습니다.");
+            return;
+        }else{
+            return response.json();
+        }
+    }).then(function(jsonData){
+        console.log(jsonData);
+        
+
+    })
+    }
+
+    //좌표실패함수
+    function coorFail(){
+
+    }
+
+
+    (function(){
+        navigator.geolocation.getCurrentPosition(ajax,coorFail) //성공하면 ajax 실패하면 coorFail 실행
+    })()
+    </script>
+</body>
+</html>
